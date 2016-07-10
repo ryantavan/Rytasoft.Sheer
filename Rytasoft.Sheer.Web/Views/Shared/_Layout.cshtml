@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body ng-app="app" ng-controller="TestAPICtrl">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -40,5 +40,10 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/angular/angular.js"></script>
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/app/Services/configSvc.js"></script>
+    <script src="~/Scripts/app/Services/sheerSvc.js"></script>
+    <script src="~/Scripts/app/Controllers/TestAPICtrl.js"></script>
 </body>
 </html>
