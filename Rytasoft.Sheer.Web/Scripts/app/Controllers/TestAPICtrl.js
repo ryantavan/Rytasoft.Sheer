@@ -52,7 +52,7 @@ app.controller('TestAPICtrl', ['$scope', 'sheerSvc', '$log', function ($scope, s
         }
         else
         {
-            $scope.StudentList[index] = $scope.Original[index];
+            $scope.StudentList[index] = angular.copy( $scope.Original[index]);
         }
         row.$edit = false;
     }
