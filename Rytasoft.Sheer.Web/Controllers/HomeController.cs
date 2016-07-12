@@ -15,15 +15,14 @@ namespace Rytasoft.Sheer.Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "A sample to show how to retrive Metadata and process them inside Angularjs";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Message = "Please give me your ideas and your feedbacks about this sample at ryan.tavan@live.com.au";
             return View();
         }
     }

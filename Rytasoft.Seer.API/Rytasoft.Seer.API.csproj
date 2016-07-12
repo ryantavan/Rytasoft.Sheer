@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\CacheWebAPIAttribute.cs" />
     <Compile Include="Classes\APIFunction.cs" />
     <Compile Include="Classes\APISchema.cs" />
     <Compile Include="Classes\APIParameter.cs" />

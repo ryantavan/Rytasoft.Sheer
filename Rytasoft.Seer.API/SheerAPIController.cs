@@ -1,4 +1,5 @@
-﻿using Rytasoft.Seer.API.Classes;
+﻿using Rytasoft.Seer.API.Attributes;
+using Rytasoft.Seer.API.Classes;
 using Rytasoft.Seer.API.Enum;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
+
 namespace Rytasoft.Seer.API
 {
     public class SheerAPIController: ApiController
     {
-        [ActionName("GetSchema")]
+        [System.Web.Http.ActionName("GetSchema")]
+        [CacheWebApi(Duration = int.MaxValue)]
         public APISchema GetSchema()
         {
             APISchema Schema = new APISchema();
