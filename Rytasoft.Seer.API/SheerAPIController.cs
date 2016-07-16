@@ -4,6 +4,7 @@ using Rytasoft.Seer.API.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -18,7 +19,7 @@ namespace Rytasoft.Seer.API
         public APISchema GetSchema()
         {
             APISchema Schema = new APISchema();
-
+            List<APIProperty> apiParameters = new List<APIProperty>();
             Type typ = this.GetType();
             Schema.Name = typ.Name;
             List<APIFunction> functions = new List<APIFunction>();
@@ -41,6 +42,36 @@ namespace Rytasoft.Seer.API
                     if (paramLevel.Any())
                     {
                         prm.Level = ParameterLevel.Body;
+                        Type paramtype = param.ParameterType;
+                        Type modelType = null;
+                        if (typeof(ICollection<>).IsAssignableFrom(paramtype))
+                        {
+                            // get a Model type
+                            modelType = paramtype.GetGenericArguments()[0];
+
+                        }
+                        else
+                        {
+                            modelType = paramtype;
+                        }
+
+                        PropertyInfo[] properties = modelType.GetProperties();
+                        List<APIProperty> propers = new List<APIProperty>();
+                        foreach (PropertyInfo property in properties)
+                        {
+                            APIProperty prp = new APIProperty()
+                            {
+                                Name = property.Name,
+                                Attributes = property.GetCustomAttributes().Select(x => x.GetType().Name).ToList()
+                            };
+
+                            var attrs = property.GetCustomAttributes();
+                            propers.Add(prp);
+                            if (prp.Attributes != null && !apiParameters.Where(x => x.Name == prp.Name).Any()) {
+                                apiParameters.Add(prp);
+                            }
+                        }
+                        prm.Properties = propers;
                     }
                     else
                     {
@@ -52,6 +83,7 @@ namespace Rytasoft.Seer.API
                 functions.Add(func);
             }
             Schema.Functions = functions;
+            Schema.Properties = apiParameters;
             return Schema;
         }
     }

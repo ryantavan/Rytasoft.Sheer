@@ -3,6 +3,7 @@
 app.factory('sheerSvc', ['$log', '$http', '$q', 'configSvc', 'MyCache', function ($log, $http, $q, configSvc, MyCache) {
     return ({
         getSchema: getSchema,
+
     });
 
 
@@ -20,6 +21,8 @@ app.factory('sheerSvc', ['$log', '$http', '$q', 'configSvc', 'MyCache', function
         });
         return (request.then(
             function (schema) {
+                $log.info(schema);
+
                 var outPutObject = {};
 
                 for (var i = 0; i < schema.data.Functions.length; i++) {

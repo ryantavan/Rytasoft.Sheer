@@ -12,5 +12,6 @@ namespace Rytasoft.Seer.API.Classes
         public string ParameterName { get; set; }
         public string ParameterType { get; set; }
         public ParameterLevel Level { get; set; }
+        public List<APIProperty> Properties { get; set; }
     }
 }
