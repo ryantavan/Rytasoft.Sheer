@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rytasoft.Seer.API.Enum
+namespace Rytasoft.Sheer.API.Enum
 {
     public enum APIType
     {

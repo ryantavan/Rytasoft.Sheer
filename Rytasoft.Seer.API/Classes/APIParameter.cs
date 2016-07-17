@@ -1,11 +1,11 @@
-﻿using Rytasoft.Seer.API.Enum;
+﻿using Rytasoft.Sheer.API.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rytasoft.Seer.API.Classes
+namespace Rytasoft.Sheer.API.Classes
 {
     public class APIParameter
     {

@@ -1,4 +1,4 @@
-﻿using Rytasoft.Seer.API;
+﻿using Rytasoft.Sheer.API;
 using Rytasoft.Sheer.Web.Data;
 using Rytasoft.Sheer.Web.Models;
 using System;

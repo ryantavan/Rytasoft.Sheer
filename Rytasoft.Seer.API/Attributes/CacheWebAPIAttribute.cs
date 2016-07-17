@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
 
-namespace Rytasoft.Seer.API.Attributes
+namespace Rytasoft.Sheer.API.Attributes
 {
     public class CacheWebApiAttribute : ActionFilterAttribute
     {

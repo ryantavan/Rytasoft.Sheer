@@ -1030,9 +1030,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rytasoft.Seer.API\Rytasoft.Seer.API.csproj">
+    <ProjectReference Include="..\Rytasoft.Seer.API\Rytasoft.Sheer.API.csproj">
       <Project>{e6d5b712-9f79-4304-8acd-e338f5fb8b25}</Project>
-      <Name>Rytasoft.Seer.API</Name>
+      <Name>Rytasoft.Sheer.API</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

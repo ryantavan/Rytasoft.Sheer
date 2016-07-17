@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rytasoft.Seer.API.Classes
+namespace Rytasoft.Sheer.API.Classes
 {
     public class APIFunction
     {

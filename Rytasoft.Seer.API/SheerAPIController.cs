@@ -1,6 +1,6 @@
-﻿using Rytasoft.Seer.API.Attributes;
-using Rytasoft.Seer.API.Classes;
-using Rytasoft.Seer.API.Enum;
+﻿using Rytasoft.Sheer.API.Attributes;
+using Rytasoft.Sheer.API.Classes;
+using Rytasoft.Sheer.API.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 
 
-namespace Rytasoft.Seer.API
+namespace Rytasoft.Sheer.API
 {
     public class SheerAPIController: ApiController
     {
