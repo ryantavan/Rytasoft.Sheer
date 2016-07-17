@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rytasoft.Seer.API.Classes
 {
-    public class APIProperty
+    public class APIAttribute
     {
-        public string Name { get; set; }
-        public List<APIAttribute> Attributes { get; set; }
+        public string AttributeName { get; set; }
+        public List<KeyValuePair<string, string>> AttributeProperties { get; set; }
     }
 }

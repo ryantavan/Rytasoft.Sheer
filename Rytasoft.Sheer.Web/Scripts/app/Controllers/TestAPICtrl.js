@@ -9,7 +9,28 @@ app.controller('TestAPICtrl', ['$scope', 'sheerSvc', '$log', function ($scope, s
         // We put API schema inside scope to be reused everywhere
         // It can be even be stored inside the rootScope and be accessible through every single controller
         $scope.API = API;
+        $scope.GetLabels();
+
+
     });
+
+    // We try to get the model label if there is any in model properties
+    $scope.GetLabels = function()
+    {
+        $scope.Labels = {};
+        for (var i = 0; i < $scope.API.Properties.length; i++) {
+            var property = $scope.API.Properties[i];
+            for (var j = 0; j < property.Attributes.length; j++) {
+                if (property.Attributes[j].AttributeName == "DisplayAttribute") {
+                    for (var k = 0; k < property.Attributes[j].AttributeProperties.length; k++) {
+                        if (property.Attributes[j].AttributeProperties[k].Key == "Name") {
+                            $scope.Labels[property.Name] = property.Attributes[j].AttributeProperties[k].Value
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
     $scope.GetStudents = function () {

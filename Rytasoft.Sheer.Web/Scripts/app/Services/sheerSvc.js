@@ -146,7 +146,7 @@ app.factory('sheerSvc', ['$log', '$http', '$q', 'configSvc', 'MyCache', function
 
                 }
 
-
+                outPutObject["Properties"] = schema.data.Properties;
                 returSchemaObject(outPutObject);
             })
         );

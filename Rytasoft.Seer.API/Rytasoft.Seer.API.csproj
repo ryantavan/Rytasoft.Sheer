@@ -61,6 +61,7 @@
     <Compile Include="Classes\APIProperty.cs" />
     <Compile Include="Classes\APISchema.cs" />
     <Compile Include="Classes\APIParameter.cs" />
+    <Compile Include="Classes\APIAttribute.cs" />
     <Compile Include="Enum\APIType.cs" />
     <Compile Include="Enum\ParameterLevel.cs" />
     <Compile Include="SheerAPIController.cs" />
