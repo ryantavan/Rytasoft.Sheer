@@ -34,6 +34,7 @@ app.controller('TestAPICtrl', ['$scope', 'sheerSvc', '$log', function ($scope, s
 
 
     $scope.GetStudents = function () {
+        // Exec the object's method as exactly as we defined it in the back-end function.
         $scope.API.Get.Exec(function (data) {
             $scope.StudentList = data;
             $scope.Original = angular.copy($scope.StudentList);
@@ -84,16 +85,16 @@ app.controller('TestAPICtrl', ['$scope', 'sheerSvc', '$log', function ($scope, s
             $scope.API.Post.Exec(row, function (data) {
                 row.Id = data;
                 $scope.Original = angular.copy($scope.StudentList);
-            }, function () {
-                // somthing went wrong
+            }, function (error) {
+                // something went wrong
             });
         }
         else
         {
             $scope.API.Put.Exec(row, function (data) {
                 $scope.Original = angular.copy($scope.StudentList);
-            }, function () {
-                // somthing went wrong
+            }, function (error) {
+                // something went wrong
             });
         }
 
